@@ -38,8 +38,8 @@ Bundle "Gundo"
 
 " vim airline
 Bundle 'bling/vim-airline'
-Bundle 'vim-scripts/virtualenv.vim'
-Bundle 'airblade/vim-gitgutter'
+"Bundle 'vim-scripts/virtualenv.vim'
+"Bundle 'airblade/vim-gitgutter'
 
 " AutoCompleteMe
 Plugin 'Valloric/YouCompleteMe'
@@ -52,6 +52,8 @@ Plugin 'honza/vim-snippets'
 
 " Tagbar
 Plugin 'Tagbar'
+"Tagbar for JavaScript
+Bundle "marijnh/tern_for_vim"
 
 
 filetype plugin indent on
@@ -320,3 +322,12 @@ let g:UltiSnipsEditSplit="vertical"
 " Tagbar
 let Tlist_Ctags_Cmd = "/usr/bin/ctags"
 nmap <leader>tt :TagbarToggle<CR>
+let g:tagbar_autofocus = 1
+let g:tagbar_indent = 1
+let g:tagbar_compact = 1
+let g:tagbar_foldlevel = -1
+let g:tagbar_autoshowtag = 1
+let g:tagbar_width = 30
+let g:tagbar_show_linenumbers = 2
+"let g:tagbar_autopreview = 1
+"autocmd BufEnter * nested :call tagbar#autoopen(0)
