@@ -50,6 +50,9 @@ Plugin 'SirVer/ultisnips'
 " Snippets are separated from the engine. Add this if you want them:
 Plugin 'honza/vim-snippets'
 
+" Tagbar
+Plugin 'Tagbar'
+
 
 filetype plugin indent on
 
@@ -180,6 +183,9 @@ nmap <leader>se :call English()<CR>
 
 " Add the unnamed register to the clipboard
 set clipboard=unnamed
+"set clipboard=unnamedplus
+nmap ,yy "+yy
+nmap ,pp "+p
 
 " Edit the vimrc file
 nmap <leader>rc :vsplit $MYVIMRC<CR>
@@ -289,7 +295,7 @@ set number
 
 "Gundo commands
 nnoremap <s-u> :GundoToggle<CR>
-let g:gundo_width = 60
+let g:gundo_width = 40
 let g:gundo_preview_height = 20 
 let g:gundo_right = 1
 let g:gundo_playback_delay = 100
@@ -301,6 +307,7 @@ let g:ycm_use_ultisnips_completer = 1 " Default 1, just ensure
 let g:ycm_seed_identifiers_with_syntax = 1 " Completion for programming language's keyword
 let g:ycm_complete_in_comments = 1 " Completion in comments
 let g:ycm_complete_in_strings = 1 " Completion in string
+nnoremap <leader>jk :YcmCompleter GoToDefinition<CR>
 
 " Ultimate snips
 let g:UltiSnipsExpandTrigger       = "<c-j>"
@@ -309,3 +316,7 @@ let g:UltiSnipsJumpBackwardTrigger = "<c-p>"
 let g:UltiSnipsListSnippets        = "<c-k>" "List possible snippets based on current file
 " If you want :UltiSnipsEdit to split your window.
 let g:UltiSnipsEditSplit="vertical"
+
+" Tagbar
+let Tlist_Ctags_Cmd = "/usr/bin/ctags"
+nmap <leader>tt :TagbarToggle<CR>
