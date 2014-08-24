@@ -42,7 +42,7 @@ ZSH_THEME="clean"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git django python osx)
+plugins=(git django osx)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -69,9 +69,14 @@ export PATH=/opt/local/bin:/opt/local/sbin:$PATH
 
 alias gs='git status '
 export LC_CTYPE="es_ES.utf-8"
-#export VIRTUALENVWRAPPER_PYTHON=/System/Library/Frameworks/Python.framework/Versions/2.7/Extras/lib/python
+#export PATH="/System/Library/Frameworks/Python.framework/Versions/2.7/bin:${PATH}"
+#export VIRTUALENVWRAPPER_PYTHON=/System/Library/Frameworks/Python.framework/Versions/2.7/bin/python
+source /usr/local/bin/virtualenvwrapper.sh
 #export VIRTUALENVWRAPPER_VIRTUALENV=/usr/local/bin/virtualenv
-export PYENV_ROOT=/usr/local/opt/pyenv
+#export PYENV_ROOT=/usr/local/opt/pyenv
+#export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python
+#export VIRTUALENVWRAPPER_VIRTUALENV=/usr/local/bin/virtualenv
+#export PYENV_ROOT=/usr/local/opt/pyenv
 #source virtualenvwrapper.sh
 
 
@@ -89,3 +94,6 @@ bindkey '^[[1;9C' forward-word
 bindkey '^[[1;9D' backward-word
 bindkey '^[[1;5C' forward-word
 bindkey '^[[1;5D' backward-word
+
+# for vim and macvim with YouCompleteMe
+export DYLD_FORCE_FLAT_NAMESPACE=1

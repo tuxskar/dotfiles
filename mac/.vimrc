@@ -71,7 +71,6 @@ colorscheme elflord
 set background=dark
 "powerline
 set t_Co=256 " Explicitly tell Vim that the terminal supports 256 colors
-set nocompatible   " Disable vi-compatibility
 set encoding=utf-8 " Necessary to show Unicode glyphs
 
 " Automatic reloading of .vimrc
@@ -188,6 +187,9 @@ set clipboard=unnamed
 "set clipboard=unnamedplus
 nmap ,yy "+yy
 nmap ,pp "+p
+
+" Fix backspace deletion
+set backspace=2
 
 " Edit the vimrc file
 nmap <leader>rc :vsplit $MYVIMRC<CR>
